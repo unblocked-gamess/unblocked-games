@@ -1,0 +1,1 @@
+javascript:(function() {    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');    link.type = 'image/x-icon';    link.rel = 'shortcut icon';    link.href = 'https://www.google.com/a/cpanel/images/favicon.ico';    document.title='Gmail';    console.log(document.title);    document.getElementsByTagName('head')[0].appendChild(link)})();
