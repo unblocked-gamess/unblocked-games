@@ -1,31 +1,32 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      .collapsible {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-      
-.active, .collapsible:hover {
-  background-color: #ccc;
-}
-      
+  <head><style>
 .content {
   padding: 0 18px;
-  display: none;
+  background-color: white;
+  max-height: 0;
   overflow: hidden;
-  background-color: #f1f1f1;
+  transition: max-height 0.2s ease-out;
 }
-    </style>
+</style>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
   </head>
   <body style="background-color:grey;">
     <button type="button" class="collapsible">Open Collapsible</button>
@@ -33,20 +34,4 @@
       <p>Lorem ipsum...</p>
     </div>
   </body>
-    <script>
-      var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-    </script>
 </html>
