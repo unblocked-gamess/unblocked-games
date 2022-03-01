@@ -2,13 +2,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+    var gametimeplayerURL = "https://unblocked-gamess.github.io/gametime-player/index.html"
+    function gametimeplayer() {
+      var gametimeplayerWIN;
+      gametimeplayerWIN = window.open();
+      gametimeplayerWIN.document.body.style.margin = "0";
+      gametimeplayerWIN.document.body.style.height = "100vh";
+      var iframe = gametimeplayerWIN.document.createElement("gametimeplayerIFRAME");
+      gametimeplayerIFRAME.style.border = "none";
+      gametimeplayerIFRAME.style.width = "100%";
+      gametimeplayerIFRAME.style.height = "100%";
+      gametimeplayerIFRAME.style.margin = "0";
+      gametimeplayerIFRAME.src = gametimeplayerURL;
+      gametimeplayerWIN.document.body.appendChild(gametimeplayerIFRAME);
+    }
+    </script>
   </head>
   <body>
     <font color="#FFFFFF">
       <h2>Games</h2>
       <a href="https://unblocked-gamess.github.io/unblocked-games/Misc/Menu/Table-Of-Contents.html" target="_self">Back</a>
       <br><br>
-      <a>Blank</a>
+      <a onclick="gametimeplayer()">Gametime Player</a>
       <br>
     </font>
   </body>
